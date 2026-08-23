@@ -1,14 +1,15 @@
-import pandas as pd
 import matplotlib.pyplot as plt
+import pandas as pd
+
 
 def load_mutation_data(input_file):
-      data = pd.read_csv(input_file)
-  return data
+    data = pd.read_csv(input_file)
+    return data
 
 
 def count_mutations_by_gene(data):
-  gene_counts = data["gene"].value_counts()
-      return gene_counts
+    gene_counts = data["gene"].value_counts()
+    return gene_counts
 
 
 def plot_mutations_by_gene(gene_counts, output_file):
