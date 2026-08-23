@@ -2,13 +2,7 @@ import argparse
 import pandas as pd
 from pathlib import Path
 
-DRIVER_GENES = {
-    "TP53",
-    "KRAS",
-    "EGFR",
-    "BRCA1",
-    "BRCA2",
-}
+DRIVER_GENES = {"TP53", "KRAS", "EGFR", "BRCA1", "BRCA2"}
 
 
 def filter_driver_genes(data):
