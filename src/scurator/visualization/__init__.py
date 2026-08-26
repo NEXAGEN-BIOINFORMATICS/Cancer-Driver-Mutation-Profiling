@@ -3,7 +3,7 @@
 from .plots import count_mutations_by_gene, load_mutation_data, plot_mutations_by_gene
 
 __all__ = [
-    "load_mutation_data",
     "count_mutations_by_gene",
+    "load_mutation_data",
     "plot_mutations_by_gene",
 ]
