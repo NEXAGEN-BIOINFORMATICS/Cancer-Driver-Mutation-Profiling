@@ -2,6 +2,9 @@ import pandas as pd
 
 from src.scurator.pipeline.annotator import filter_driver_genes
 
+EXPECTED_GENE_COUNT = 3
+EXPECTED_HUGO_SYMBOL_COUNT = 2
+
 
 def test_filter_driver_genes_with_gene_column():
     data = pd.DataFrame(
@@ -13,7 +16,7 @@ def test_filter_driver_genes_with_gene_column():
 
     result = filter_driver_genes(data)
 
-    assert len(result) == 3
+    assert len(result) == EXPECTED_GENE_COUNT
     assert set(result["gene"]) == {"TP53", "KRAS", "BRCA1"}
 
 
@@ -27,5 +30,5 @@ def test_filter_driver_genes_with_hugo_symbol_column():
 
     result = filter_driver_genes(data)
 
-    assert len(result) == 2
+    assert len(result) == EXPECTED_HUGO_SYMBOL_COUNT
     assert set(result["Hugo_Symbol"]) == {"EGFR", "BRCA2"}
