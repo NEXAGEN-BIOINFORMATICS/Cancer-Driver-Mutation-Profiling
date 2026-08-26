@@ -3,14 +3,7 @@ from pathlib import Path
 
 import pandas as pd
 
-
-DRIVER_GENES = {
-    "TP53",
-    "KRAS",
-    "EGFR",
-    "BRCA1",
-    "BRCA2",
-}
+DRIVER_GENES = {"TP53", "KRAS", "EGFR", "BRCA1", "BRCA2"}
 
 
 def filter_driver_genes(data):
@@ -19,9 +12,7 @@ def filter_driver_genes(data):
     elif "gene" in data.columns:
         gene_column = "gene"
     else:
-        raise ValueError(
-            "Gene column not found. Expected 'Hugo_Symbol' or 'gene'."
-        )
+        raise ValueError("Gene column not found. Expected 'Hugo_Symbol' or 'gene'.")
 
     filtered_data = data[data[gene_column].isin(DRIVER_GENES)].copy()
     return filtered_data
